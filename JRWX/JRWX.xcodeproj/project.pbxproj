@@ -31,6 +31,10 @@
 		D411E7E71CD9F076007692CA /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7E51CD9F076007692CA /* NSString+Hashing.m */; };
 		D411E7EA1CDAEC70007692CA /* KTLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7E91CDAEC70007692CA /* KTLogUtil.m */; };
 		D411E7F31CDB3AFF007692CA /* NSObject+atuoArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7F21CDB3AFF007692CA /* NSObject+atuoArchive.m */; };
+		D4EAC24B1CEC35D4007C092F /* KTPalyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */; };
+		D4EAC24E1CEC378E007C092F /* KTPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC24D1CEC378E007C092F /* KTPlayModel.m */; };
+		D4EAC2511CEC403D007C092F /* KTPlayerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC2501CEC403D007C092F /* KTPlayerTool.m */; };
+		D4EAC2541CEC5827007C092F /* KTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC2531CEC5827007C092F /* KTPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,14 @@
 		D411E7E91CDAEC70007692CA /* KTLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLogUtil.m; sourceTree = "<group>"; };
 		D411E7F11CDB3AFF007692CA /* NSObject+atuoArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+atuoArchive.h"; sourceTree = "<group>"; };
 		D411E7F21CDB3AFF007692CA /* NSObject+atuoArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+atuoArchive.m"; sourceTree = "<group>"; };
+		D4EAC2491CEC35D4007C092F /* KTPalyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPalyTableViewCell.h; sourceTree = "<group>"; };
+		D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPalyTableViewCell.m; sourceTree = "<group>"; };
+		D4EAC24C1CEC378E007C092F /* KTPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayModel.h; sourceTree = "<group>"; };
+		D4EAC24D1CEC378E007C092F /* KTPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPlayModel.m; sourceTree = "<group>"; };
+		D4EAC24F1CEC403D007C092F /* KTPlayerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayerTool.h; sourceTree = "<group>"; };
+		D4EAC2501CEC403D007C092F /* KTPlayerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPlayerTool.m; sourceTree = "<group>"; };
+		D4EAC2521CEC5827007C092F /* KTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayerView.h; sourceTree = "<group>"; };
+		D4EAC2531CEC5827007C092F /* KTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPlayerView.m; sourceTree = "<group>"; };
 		FD3FCF8A630C66B540BA2C9E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -248,6 +260,10 @@
 			children = (
 				D411E75C1CD9D262007692CA /* KTConmonModel.h */,
 				D411E75D1CD9D262007692CA /* KTConmonModel.m */,
+				D4EAC24C1CEC378E007C092F /* KTPlayModel.h */,
+				D4EAC24D1CEC378E007C092F /* KTPlayModel.m */,
+				D4EAC24F1CEC403D007C092F /* KTPlayerTool.h */,
+				D4EAC2501CEC403D007C092F /* KTPlayerTool.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,12 +271,16 @@
 		D411E75E1CD9D262007692CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D4EAC2521CEC5827007C092F /* KTPlayerView.h */,
+				D4EAC2531CEC5827007C092F /* KTPlayerView.m */,
 				D411E75F1CD9D262007692CA /* KTExpandButton.h */,
 				D411E7601CD9D262007692CA /* KTExpandButton.m */,
 				D411E7611CD9D262007692CA /* KTTabBar.h */,
 				D411E7621CD9D262007692CA /* KTTabBar.m */,
 				D411E7631CD9D262007692CA /* KTTabBarButton.h */,
 				D411E7641CD9D262007692CA /* KTTabBarButton.m */,
+				D4EAC2491CEC35D4007C092F /* KTPalyTableViewCell.h */,
+				D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -527,6 +547,8 @@
 				D411E7E71CD9F076007692CA /* NSString+Hashing.m in Sources */,
 				D411E7691CD9D262007692CA /* KTConmonModel.m in Sources */,
 				D411E7DE1CD9DE98007692CA /* KTNetManager.m in Sources */,
+				D4EAC24E1CEC378E007C092F /* KTPlayModel.m in Sources */,
+				D4EAC2541CEC5827007C092F /* KTPlayerView.m in Sources */,
 				D411E7751CD9D34D007692CA /* ViewController3.m in Sources */,
 				D411E7681CD9D262007692CA /* KTTabBarController.m in Sources */,
 				D411E7721CD9D345007692CA /* ViewController2.m in Sources */,
@@ -539,6 +561,8 @@
 				D411E7781CD9D354007692CA /* ViewController4.m in Sources */,
 				D411E76A1CD9D262007692CA /* KTExpandButton.m in Sources */,
 				D411E7201CD9D01D007692CA /* main.m in Sources */,
+				D4EAC2511CEC403D007C092F /* KTPlayerTool.m in Sources */,
+				D4EAC24B1CEC35D4007C092F /* KTPalyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
