@@ -1,0 +1,6 @@
+framework module SegmentControlLFL {
+  umbrella header "SegmentControlLFL-umbrella.h"
+
+  export *
+  module * { export * }
+}

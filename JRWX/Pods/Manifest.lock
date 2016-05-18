@@ -42,6 +42,7 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SegmentControlLFL (1.0.0)
   - SVProgressHUD (2.0.3)
   - TMCache (2.1.0)
 
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - MJRefresh
   - Reachability
   - SDWebImage
+  - SegmentControlLFL (~> 1.0.0)
   - SVProgressHUD
   - TMCache
 
@@ -71,6 +73,7 @@ SPEC CHECKSUMS:
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SegmentControlLFL: 940cab5c290c45f781f5ab147e20b65ea25d7aa7
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
 

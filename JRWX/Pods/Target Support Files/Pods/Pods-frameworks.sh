@@ -63,6 +63,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Reachability.framework'
   install_framework 'Pods/SDWebImage.framework'
   install_framework 'Pods/SVProgressHUD.framework'
+  install_framework 'Pods/SegmentControlLFL.framework'
   install_framework 'Pods/TMCache.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -77,5 +78,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Reachability.framework'
   install_framework 'Pods/SDWebImage.framework'
   install_framework 'Pods/SVProgressHUD.framework'
+  install_framework 'Pods/SegmentControlLFL.framework'
   install_framework 'Pods/TMCache.framework'
 fi

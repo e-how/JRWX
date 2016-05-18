@@ -8,7 +8,13 @@
 
 #import "ViewController1.h"
 #import "ViewController2.h"
-@interface ViewController1 ()
+#import "LFLUISegmentedControl.h"
+
+@interface ViewController1 ()<LFLUISegmentedControlDelegate>
+
+@property(nonatomic, strong)UIScrollView *mainScrollView; /**< 正文mainSV */
+
+@property (nonatomic ,strong)LFLUISegmentedControl * LFLuisement;
 
 @end
 
@@ -19,7 +25,62 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"setting" style:UIBarButtonItemStylePlain target:self action:@selector(push)];;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"setting" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+    
+    //    1.初次创建：
+    self.LFLuisement=[[LFLUISegmentedControl alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.LFLuisement.delegate = self;
+    //   2.设置显示切换标题数组
+    [self.LFLuisement AddSegumentArray:
+     [NSArray arrayWithObjects:@"关注",@"VIP",nil]];
+    [self.LFLuisement selectTheSegument:0];
+    [self.view addSubview:self.LFLuisement];
+    
+    [self createMainScrollView];
+}
+
+//创建正文ScrollView内容
+- (void)createMainScrollView {
+    
+    CGFloat begainScrollViewY = 33+ 64;
+    self.mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, begainScrollViewY, SCREEN_WIDTH,(SCREEN_HEIGHT -begainScrollViewY))];
+    self.mainScrollView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:self.mainScrollView];
+    self.mainScrollView.bounces = NO;
+    self.mainScrollView.pagingEnabled = YES;
+    self.mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, (SCREEN_HEIGHT -begainScrollViewY));
+    //设置代理
+    self.mainScrollView.delegate = self;
+    
+    //添加滚动显示的三个对应的界面view
+    for (int i = 0; i < 2; i++) {
+        UIView *viewExample = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH *i, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        viewExample.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
+        [self.mainScrollView addSubview:viewExample];
+    }
+}
+
+#pragma mark --- UIScrollView代理方法
+
+static NSInteger pageNumber = 0;
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    pageNumber = (int)(scrollView.contentOffset.x / SCREEN_WIDTH + 0.5);
+    //    滑动SV里视图,切换标题
+    [self.LFLuisement selectTheSegument:pageNumber];
+}
+
+#pragma mark ---LFLUISegmentedControlDelegate
+/**
+ *  点击标题按钮
+ *
+ *  @param selection 对应下标 begain 0
+ */
+-(void)uisegumentSelectionChange:(NSInteger)selection{
+    //    加入动画,显得不太过于生硬切换
+    [UIView animateWithDuration:.2 animations:^{
+        [self.mainScrollView setContentOffset:CGPointMake(SCREEN_WIDTH *selection, 0)];
+    }];
 }
 
 - (void)push{
@@ -32,14 +93,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
