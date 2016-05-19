@@ -41,7 +41,7 @@
     
 }
 
--(void)progressUpdate:(NSNotification *)notify
+-(void)progressUpdate:(NSNotification *)notice
 {
     [self.tableView reloadData];
 }

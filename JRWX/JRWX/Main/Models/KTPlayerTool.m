@@ -54,7 +54,7 @@
     
     self.isPlayingflag = YES;
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updataProgress) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playbackFinished:)name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     
 }
@@ -74,7 +74,7 @@
     [self.player seekToTime:CMTimeMakeWithSeconds(0, NSEC_PER_SEC) completionHandler:^(BOOL finished) {
         
         [self pause];
-        [self updataProgress];
+        [self updateProgress];
 
     }];
 }
@@ -83,7 +83,7 @@
     return self.isPlayingflag;
 }
 
-- (void)updataProgress{
+- (void)updateProgress{
 
     self.current ++;
     // 不相等的时候才更新，并发通知，否则seek时会继续跳动
@@ -102,8 +102,7 @@
 - (void)updateCurrentTime:(CGFloat)time{
     
     [self.player pause];
-//    self.current = time;
-    [self updataProgress];
+    [self updateProgress];
 
     [self.player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC) completionHandler:^(BOOL finished) {
         
