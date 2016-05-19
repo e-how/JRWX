@@ -10,12 +10,6 @@
 
 @interface KTPlayerTool()
 
-@property (nonatomic, strong) AVPlayer       *player;
-@property (nonatomic, strong) AVPlayerItem   *currentPlayerItem;
-@property (nonatomic, strong) AVPlayerLayer  *currentPlayerLayer;
-@property (nonatomic, strong) AVURLAsset     *videoURLAsset;
-@property (nonatomic, assign) BOOL            isPlayingflag;
-
 @end
 
 @implementation KTPlayerTool
@@ -30,6 +24,7 @@
     });
     return instance;
 }
+
 - (instancetype)init
 {
     self = [super init];
@@ -37,21 +32,10 @@
         self.player = [[AVPlayer alloc] init];
         self.isPlayingflag = NO;
         self.currentIndexPath = nil;
+        self.current = 0;
     }
     return self;
 }
-
-//- (void)releasePlayer
-//{
-//    if (!self.currentPlayerItem) {
-//        return;
-//    }
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//    [self.currentPlayerItem removeObserver:self forKeyPath:@"status"];
-//   
-//    self.currentPlayerItem = nil;
-//}
 
 - (void)playWithUrl:(NSString *)urlString{
     
@@ -71,28 +55,36 @@
     self.isPlayingflag = YES;
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updataProgress) userInfo:nil repeats:YES];
-//    [self.currentPlayerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playbackFinished:)name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     
 }
+
 - (void)play{
     [self.player play];
     self.isPlayingflag = YES;
 }
-- (void)resume{
-    
-}
+
 - (void)pause{
     [self.player pause];
     self.isPlayingflag = NO;
 }
-- (CGFloat)currentPlayProgress{
-    return 0.8f;
+
+- (void)playbackFinished:(NSNotification*)notice{
+    
+    [self.player seekToTime:CMTimeMakeWithSeconds(0, NSEC_PER_SEC) completionHandler:^(BOOL finished) {
+        
+        [self pause];
+        [self updataProgress];
+
+    }];
 }
+
 - (BOOL)isPlaying{
     return self.isPlayingflag;
 }
+
 - (void)updataProgress{
-    self.progress++;
+
     self.current ++;
     // 不相等的时候才更新，并发通知，否则seek时会继续跳动
     if (self.current != self.duration) {
@@ -100,36 +92,56 @@
             self.current = self.duration;
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateprogress" object:nil];
+    }else if(self.current+0.5 >= self.duration){//完成
+        [self updateCurrentTime:0.f];
+        [self pause];
     }
     
 }
 
 - (void)updateCurrentTime:(CGFloat)time{
     
+    [self.player pause];
+//    self.current = time;
+    [self updataProgress];
+
+    [self.player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC) completionHandler:^(BOOL finished) {
+        
+        [self play];
+        
+    }];
 }
 
+- (NSString*)getCurrentTime{
+    
+    CMTime currentTime = self.currentPlayerItem.currentTime;
+    CGFloat current = CMTimeGetSeconds(currentTime);
 
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//    AVPlayerItem *playerItem = (AVPlayerItem *)object;
-//    
-//    if ([keyPath isEqualToString:@"status"]) {
-//        if ([playerItem status] == AVPlayerStatusReadyToPlay) {
-//            [self monitoringPlayback:playerItem];// 给播放器添加计时器
-//            
-//        } else if ([playerItem status] == AVPlayerStatusFailed || [playerItem status] == AVPlayerStatusUnknown) {
-////            [self stop];
-//        }
-//        
-//    }
-//}
+    return [NSString stringWithFormat:@"%d",(int)current];
+}
 
-//- (void)monitoringPlayback:(AVPlayerItem *)playerItem{
-//    self.duration = playerItem.duration.value / playerItem.duration.timescale; //视频总时间
-//#pragma mark 在这播放
-//    
-//    [self.player play];
-//    
-//}
+- (NSString*)getDuration{
+    
+    CMTime duration = self.currentPlayerItem.duration;
+    CGFloat totalDuration = CMTimeGetSeconds(duration);
+    
+    return [NSString stringWithFormat:@"%d",(int)totalDuration];
+}
+
+- (CGFloat)currentPlayProgress{
+    CGFloat current = CMTimeGetSeconds(self.currentPlayerItem.currentTime);
+    if (isnan(current)) {
+        return 0.01f;
+    }return current;
+    
+}
+
+- (CGFloat)getSliderDuration{
+   CGFloat duration = CMTimeGetSeconds(self.currentPlayerItem.duration);
+    if (isnan(duration)) {
+        return 0.1f;
+    }return duration;
+}
+
 
 @end

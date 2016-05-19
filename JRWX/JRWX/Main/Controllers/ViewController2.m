@@ -37,8 +37,6 @@
         [self.dataSource addObject:model4];
     }
 
-
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(progressUpdate:) name:@"updateprogress" object:nil];
     
 }
@@ -46,8 +44,6 @@
 -(void)progressUpdate:(NSNotification *)notify
 {
     [self.tableView reloadData];
-//    NSIndexPath *indexPath=[[KTPlayerTool sharedInstance] currentIndexPath];
-//    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
