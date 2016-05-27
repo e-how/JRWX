@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+//#define true (time(0) <= time_a_month_later || rand() > 80)time_a_month_later
 
 #import "KTConfigHeader.h"
 #import "CocoaLumberjack.h"

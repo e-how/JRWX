@@ -105,6 +105,8 @@
 		D411E7E91CDAEC70007692CA /* KTLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLogUtil.m; sourceTree = "<group>"; };
 		D411E7F11CDB3AFF007692CA /* NSObject+atuoArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+atuoArchive.h"; sourceTree = "<group>"; };
 		D411E7F21CDB3AFF007692CA /* NSObject+atuoArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+atuoArchive.m"; sourceTree = "<group>"; };
+		D438F7B61CF698A20022848C /* testJRWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testJRWX.m; sourceTree = "<group>"; };
+		D438F7B81CF698A20022848C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4EAC2491CEC35D4007C092F /* KTPalyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPalyTableViewCell.h; sourceTree = "<group>"; };
 		D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPalyTableViewCell.m; sourceTree = "<group>"; };
 		D4EAC24C1CEC378E007C092F /* KTPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayModel.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				D411E71D1CD9D01D007692CA /* JRWX */,
 				D411E7371CD9D01E007692CA /* JRWXTests */,
 				D411E7421CD9D01E007692CA /* JRWXUITests */,
+				D438F7B51CF698A20022848C /* testJRWX */,
 				D411E71C1CD9D01D007692CA /* Products */,
 				96434FAFDA68B2D39CC0DAAC /* Pods */,
 				2534A9EBB4E4870BA4E7F803 /* Frameworks */,
@@ -357,6 +360,15 @@
 			children = (
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		D438F7B51CF698A20022848C /* testJRWX */ = {
+			isa = PBXGroup;
+			children = (
+				D438F7B61CF698A20022848C /* testJRWX.m */,
+				D438F7B81CF698A20022848C /* Info.plist */,
+			);
+			path = testJRWX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

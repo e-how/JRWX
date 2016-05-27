@@ -54,6 +54,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/AFNetworking.framework'
   install_framework 'Pods/Base64.framework'
+  install_framework 'Pods/BlocksKit.framework'
   install_framework 'Pods/CocoaLumberjack.framework'
   install_framework 'Pods/FMDB.framework'
   install_framework 'Pods/JWT.framework'
@@ -69,6 +70,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/AFNetworking.framework'
   install_framework 'Pods/Base64.framework'
+  install_framework 'Pods/BlocksKit.framework'
   install_framework 'Pods/CocoaLumberjack.framework'
   install_framework 'Pods/FMDB.framework'
   install_framework 'Pods/JWT.framework'
