@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef DEBUG
-static const int ddLogLevel = DDLogLevelVerbose;
-#else
-static const int ddLogLevel = DDLogLevelWarning;
-#endif
-
 @interface KTLogUtil : NSObject
 
 +(void)installLogUtil;

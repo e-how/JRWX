@@ -58,6 +58,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/CocoaLumberjack.framework'
   install_framework 'Pods/FMDB.framework'
   install_framework 'Pods/JWT.framework'
+  install_framework 'Pods/KVOController.framework'
   install_framework 'Pods/MJExtension.framework'
   install_framework 'Pods/MJRefresh.framework'
   install_framework 'Pods/Masonry.framework'
@@ -66,6 +67,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/SVProgressHUD.framework'
   install_framework 'Pods/SegmentControlLFL.framework'
   install_framework 'Pods/TMCache.framework'
+  install_framework 'Pods/YYKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/AFNetworking.framework'
@@ -74,6 +76,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/CocoaLumberjack.framework'
   install_framework 'Pods/FMDB.framework'
   install_framework 'Pods/JWT.framework'
+  install_framework 'Pods/KVOController.framework'
   install_framework 'Pods/MJExtension.framework'
   install_framework 'Pods/MJRefresh.framework'
   install_framework 'Pods/Masonry.framework'
@@ -82,4 +85,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/SVProgressHUD.framework'
   install_framework 'Pods/SegmentControlLFL.framework'
   install_framework 'Pods/TMCache.framework'
+  install_framework 'Pods/YYKit.framework'
 fi

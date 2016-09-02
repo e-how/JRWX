@@ -31,6 +31,7 @@
 		D411E7E71CD9F076007692CA /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7E51CD9F076007692CA /* NSString+Hashing.m */; };
 		D411E7EA1CDAEC70007692CA /* KTLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7E91CDAEC70007692CA /* KTLogUtil.m */; };
 		D411E7F31CDB3AFF007692CA /* NSObject+atuoArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D411E7F21CDB3AFF007692CA /* NSObject+atuoArchive.m */; };
+		D44369C01CFC156B0062B55E /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44369BF1CFC156B0062B55E /* BlocksKit.framework */; };
 		D4EAC24B1CEC35D4007C092F /* KTPalyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */; };
 		D4EAC24E1CEC378E007C092F /* KTPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC24D1CEC378E007C092F /* KTPlayModel.m */; };
 		D4EAC2511CEC403D007C092F /* KTPlayerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAC2501CEC403D007C092F /* KTPlayerTool.m */; };
@@ -107,6 +108,7 @@
 		D411E7F21CDB3AFF007692CA /* NSObject+atuoArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+atuoArchive.m"; sourceTree = "<group>"; };
 		D438F7B61CF698A20022848C /* testJRWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testJRWX.m; sourceTree = "<group>"; };
 		D438F7B81CF698A20022848C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44369BF1CFC156B0062B55E /* BlocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BlocksKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/JRWX-fvkzcucitcfunrbqxpyebmaaobpm/Build/Products/Debug-iphonesimulator/BlocksKit.framework"; sourceTree = "<group>"; };
 		D4EAC2491CEC35D4007C092F /* KTPalyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPalyTableViewCell.h; sourceTree = "<group>"; };
 		D4EAC24A1CEC35D4007C092F /* KTPalyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPalyTableViewCell.m; sourceTree = "<group>"; };
 		D4EAC24C1CEC378E007C092F /* KTPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayModel.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44369C01CFC156B0062B55E /* BlocksKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +150,7 @@
 		2534A9EBB4E4870BA4E7F803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D44369BF1CFC156B0062B55E /* BlocksKit.framework */,
 				FD3FCF8A630C66B540BA2C9E /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -662,6 +666,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-Objc";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -699,6 +704,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-Objc";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

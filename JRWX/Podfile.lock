@@ -50,6 +50,7 @@ PODS:
   - JPush (2.1.6)
   - JWT (2.0.1):
     - Base64 (~> 1.1.2)
+  - KVOController (1.1.0)
   - Masonry (1.0.0)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
@@ -60,6 +61,9 @@ PODS:
   - SegmentControlLFL (1.0.0)
   - SVProgressHUD (2.0.3)
   - TMCache (2.1.0)
+  - YYKit (1.0.6):
+    - YYKit/no-arc (= 1.0.6)
+  - YYKit/no-arc (1.0.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -68,6 +72,7 @@ DEPENDENCIES:
   - FMDB
   - JPush
   - JWT
+  - KVOController
   - Masonry
   - MJExtension
   - MJRefresh
@@ -76,6 +81,7 @@ DEPENDENCIES:
   - SegmentControlLFL (~> 1.0.0)
   - SVProgressHUD
   - TMCache
+  - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -85,6 +91,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   JPush: 9732a2a9e6a34729f660d6275704a5803d661e83
   JWT: c8e1c1c8a5f0add28530bf3cd3342e7fd70d18f3
+  KVOController: 321b5fc59300fcaabd42c0f679baa7a27efbb2fd
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
@@ -93,5 +100,6 @@ SPEC CHECKSUMS:
   SegmentControlLFL: 940cab5c290c45f781f5ab147e20b65ea25d7aa7
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
+  YYKit: a80c77ab7be226ebe539ef1495dfc25d5766d61e
 
 COCOAPODS: 0.38.0
