@@ -25,7 +25,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
     int x = 1;
+    
+    NSLog(@"branch1!");
+    
+    
     NSAssert(x!=0,@"x must not be zero");
+    
+    
     
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"setting" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
